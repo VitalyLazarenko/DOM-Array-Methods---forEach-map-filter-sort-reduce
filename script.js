@@ -33,6 +33,13 @@ function doubleMoney() {
   uppdateDom();
 }
 
+// Sort users by rischest
+function sortByRischest() {
+  data.sort((a, b) => b.money - a.money);
+
+  uppdateDom();
+}
+
 // add new obj to data array
 function addData(obj) {
   data.push(obj);
@@ -63,3 +70,4 @@ function formatMoney(number) {
 
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBTN.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRischest);
