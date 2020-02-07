@@ -1,7 +1,7 @@
 const main = document.getElementById('main');
 const addUserBtn = document.getElementById('add_user');
 const doubleBTN = document.getElementById('double');
-const showMilliionairesBtn = document.getElementById('show_milliionaires');
+const showMilliionairesBtn = document.getElementById('show_millionaires');
 const sortBtn = document.getElementById('sort');
 const calculateWeathBtn = document.getElementById('calculate_weath');
 
@@ -40,6 +40,13 @@ function sortByRischest() {
   uppdateDom();
 }
 
+// Show users by Milliionaires
+function showMilliionaires() {
+  data = data.filter(user => user.money > 1000000);
+
+  uppdateDom();
+}
+
 // add new obj to data array
 function addData(obj) {
   data.push(obj);
@@ -71,3 +78,4 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBTN.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRischest);
+showMilliionairesBtn.addEventListener('click', showMilliionaires);
